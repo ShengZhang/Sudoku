@@ -327,7 +327,9 @@ void static Helper::print(wstring& message, int x, int y, int value)
     k << value;
     wstring strk = k.str();
     message.append(L": ").append(str).append(L"--").append(strk).append(L"\n");
+#ifdef _DEBUG
     TRACE((TCHAR *)message.c_str());
+#endif
 }
 
 void static Helper::print(wstring& message, Point* point, list<int> values)
@@ -350,5 +352,7 @@ void static Helper::print(wstring& message, int x, int y, list<int> values)
 
     wstring valuesk = k.str();
     message.append(L": ").append(str).append(L"--").append(valuesk).append(L"\n");
+#ifdef _DEBUG
     TRACE((TCHAR *)message.c_str());
+#endif
 }
