@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <tchar.h>
 #include "grid.h"
+#include "DataIO.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -13,10 +14,9 @@ int _tmain(int argc, _TCHAR* argv[])
     {
         Point* minPoint = grid.getCellWithMinimumAvailableValues();
         grid.setCellValue(minPoint);
-
-        grid.print();
     }
-
+    //grid.print();
+    DataIO::write( L"result.txt");
     return 0;
 }
 

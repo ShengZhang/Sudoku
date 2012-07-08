@@ -24,12 +24,21 @@
     <ClCompile Include="src\trace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\DataIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Grid.h">
+    <ClInclude Include="inc\DataIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\trace.h">
+    <ClInclude Include="inc\Grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\trace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,10 @@
-#pragma once
-#include <iostream>
+#ifndef GRID_H
+#define GRID_H
+
+#include "common.h"
 #include <map>
 #include <list>
 #include <stack>
-#include < assert.h> 
-using namespace std;
 
 class Point;
 #define N 9
@@ -74,5 +74,6 @@ namespace Helper
     void static print(wstring& message, int x, int y, int value);
     void static print(wstring& message, Point* point, list<int> values);
     void static print(wstring& message, int x, int y, list<int> values);
-}
+};
 
+#endif // GRID_H
