@@ -9,6 +9,7 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
     Grid grid = Grid();
+	DataIO::read();
     grid.initCellAvailableValues();
     while(!grid.isEnd())
     {

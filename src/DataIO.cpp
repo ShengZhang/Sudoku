@@ -13,7 +13,53 @@ DataIO::~DataIO(void)
 
 void DataIO::read()
 {
+	ifstream file("input.txt");
+	if (file.is_open())
+	{
 
+		std::stringstream buffer;
+		buffer << file.rdbuf();
+		string contents(buffer.str());
+
+		vector<string> data = DataIO::split(contents, ',');
+
+		// Init Grid::CELLS
+		for(int i = 0; i < (int)data.size(); ++i)
+		{
+			string item = data[i];
+			stringstream str(item);
+			int value;
+			str >> value;
+			/* Lets not forget to error checking */
+			if (!str)
+			{
+				 // The conversion failed.
+				 // Need to do something here.
+				 // Maybe throw an exception
+			}
+
+			int y = i%N;
+			int x = i/N;
+			Grid::CELLS[x][y] = value;
+		}
+	}
+}
+
+vector<string>& DataIO::split(const string &s, char delim, vector<string> &elems) 
+{
+    stringstream ss(s);
+    string item;
+    while(getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+    return elems;
+}
+
+
+vector<std::string> DataIO::split(const string &s, char delim) 
+{
+    vector<string> elems;
+    return split(s, delim, elems);
 }
 
 bool DataIO::write( wstring wsFileName)
